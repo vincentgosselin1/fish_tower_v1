@@ -4,7 +4,7 @@
 //This File should copied to Documents/Arduino/Libraries/GROWBOX1/GROWBOX1.cpp for changes to happen in the Arduino.
 
 
-#include "Arduino.h"
+//#include "Arduino.h"
 #include "ARDUINO1.h"
 //Digital pin class.
 Digital_pin::Digital_pin(int pin)

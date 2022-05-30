@@ -11,7 +11,9 @@ Description:
 There are 10x laser_trip_circuit hooked to the arduino
 to trigger the 5x Camdoo cameras. The Camdoo camera have a feedback signal.
 The cameras can also be triggered by 5x PIR sensors. 
-hello
+
+
+Version: 1.
 
 */
 
@@ -20,30 +22,22 @@ hello
 #include "ARDUINO1.h"
 #include "arduinotools.h"
 
+//From arduinotools.h
+SmartWait smartWait0;
 
-// constants used here to set pin numbers
-const int ledPin =  5;            // the number of the LED pin (pre-defined)
-const int cameraTriggerPin = 2;             // connected to digital pin 2
-const int cameraStatusPin = 3;              // connected to digital pin 3
-const int buttonPin = 7;               // pushbutton connected to digital pin 7
-const long interval = 500;                  // LED flash interval (milliseconds)
+//ALL CLASSES ARE FROM ARDUINO1
 
-
-//variables
-
-int ledState = 0;                         // ledState used to set the LED
-int cameraState = 0;                      // cameraState used to store camera status (on/off)
-int buttonState = 0;                      // for reading the pushbutton status
-unsigned long previousMillis = 0;           // will store last time LED was updated
+//Components
+Lasertrip Lasertrip1A(13)//pin13 lasertrip pcb1 with channel A.
 
 
 void setup()
 {
-  pinMode(cameraTriggerPin, OUTPUT);        // set cameraTriggerPin as an output
-  pinMode(cameraStatusPin, INPUT);          // sets cameraStatusPin as an input   
-  pinMode(ledPin, OUTPUT);                  // sets ledPin as an output   
-  pinMode(buttonPin, INPUT);                // sets buttonPin as an input     
-  Serial.begin(9600);                       // open the serial port at 9600 bps:    
+  //pinMode(cameraTriggerPin, OUTPUT);        // set cameraTriggerPin as an output
+  //pinMode(cameraStatusPin, INPUT);          // sets cameraStatusPin as an input   
+  //pinMode(ledPin, OUTPUT);                  // sets ledPin as an output   
+  //pinMode(buttonPin, INPUT);                // sets buttonPin as an input     
+  //Serial.begin(9600);                       // open the serial port at 9600 bps:    
 }
 
 
