@@ -593,3 +593,28 @@ void LCD::send_lcd(char * array)
 		break;
 	}
 }
+//new 20220530
+//Lasertrip class
+Lasertrip::Lasertrip(int pin)
+{
+	_pin = new Digital_pin(pin);//Creating object Digital_pin.
+	_pin->set_input_pullup();
+	_status = 1;//Off by default.
+}
+void Lasertrip::listen()
+{
+	bool status = _pin->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
+	//The following is to avoid the switch bouncing.
+	if(_status != status)
+	{
+		//Wait for switch to debounce.
+		delay(500);
+		//Another reading since oscillation is done.
+		status = _pin->read_input();
+	}
+	_status = status;
+}
+bool Lasertrip::get_status()
+{
+	return _status;
+}

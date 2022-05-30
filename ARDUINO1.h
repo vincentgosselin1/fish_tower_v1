@@ -179,4 +179,17 @@ class  LCD
 	private:
 		int _lcd_serial_port;	
 };
+
+
+//new 20220530
+class Lasertrip
+{
+	public:
+		Lasertrip(int pin);
+		void listen();
+		bool get_status();// 0 -> ON, 1 -> OFF.
+	private:
+	Digital_pin *_pin;//Digital_pin object.
+	bool _status;
+};
 #endif
