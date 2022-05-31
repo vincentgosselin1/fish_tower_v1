@@ -188,8 +188,13 @@ class Lasertrip
 		Lasertrip(int pin);
 		void listen();
 		bool get_status();// 0 -> ON, 1 -> OFF.
+                bool tripped();
+                void reset();
 	private:
 	Digital_pin *_pin;//Digital_pin object.
 	bool _status;
 };
 #endif
+
+
+

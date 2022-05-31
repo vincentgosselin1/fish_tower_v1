@@ -618,3 +618,5 @@ bool Lasertrip::get_status()
 {
 	return _status;
 }
+
+

@@ -47,9 +47,29 @@ accordingly.
 void loop()
 {
 
-  //fun stuff
+  //listen to lasertrip circuits
+  Lasertrip1A.listen();
+
+  //Did an event happenned?
+  if(Lasertrip1A.get_status() == 1){
+    //a fish was detected!
+    Serial.print("a fish was detected!  \n\r");
+    //activate the camera
+    Serial.print("Activating the Camera \n\r");
+    //wait a bit for camera reply
+    delay(1000);
+    //read back the camera
+    Serial.print("Sensing the Camera \n\r");
+    //cool down on the camera trigger
+    delay(10000);
+    //read back the camera
+    Serial.print("Cool down over \n\r");
+  }
 }
 
+
+//Every 10 secs.
+//if(smartWait0.wait(10000)) {}
 
 void initiate()
 {
