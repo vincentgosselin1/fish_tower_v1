@@ -29,7 +29,7 @@ SmartWait smartWait0;
 
 //Components
 Lasertrip Lasertrip1A(13); //pin13 lasertrip pcb1 with channel A.
-
+//hello
 
 void setup()
 {
@@ -49,11 +49,13 @@ void loop()
 
   //listen to lasertrip circuits
   Lasertrip1A.listen();
+  Serial.print("not tripped  \n\r");
 
+  
   //Did an event happenned?
   if(Lasertrip1A.get_status() == 1){
     //a fish was detected!
-    Serial.print("a fish was detected!  \n\r");
+    Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
     Serial.print("Activating the Camera \n\r");
     //wait a bit for camera reply
