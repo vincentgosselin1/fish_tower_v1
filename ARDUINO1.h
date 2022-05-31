@@ -170,15 +170,15 @@ class FAN
 		bool _done;
 		int _pinconfig;
 };
-class  LCD
-{
-	public:
-		LCD(int lcd_serial_port);
-		void send_lcd(char * array);//In the format of : 12oC38%rh * MASTER TIMER HERE.
+// class  LCD
+// {
+// 	public:
+// 		LCD(int lcd_serial_port);
+// 		void send_lcd(char * array);//In the format of : 12oC38%rh * MASTER TIMER HERE.
 
-	private:
-		int _lcd_serial_port;	
-};
+// 	private:
+// 		int _lcd_serial_port;	
+// };
 
 
 //new 20220530

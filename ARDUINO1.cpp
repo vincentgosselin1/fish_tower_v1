@@ -551,9 +551,9 @@ int FAN::get_pinconfig()
 	return _pinconfig;
 }
 
-LCD::LCD(int lcd_serial_port)
-{
-	_lcd_serial_port = lcd_serial_port;
+//LCD::LCD(int lcd_serial_port)
+//{
+  //_lcd_serial_port = lcd_serial_port;
 	//Cannot be put before setup() function.
 	// switch (_lcd_serial_port)
 	// {
@@ -570,29 +570,29 @@ LCD::LCD(int lcd_serial_port)
 	// 	Serial3.begin(9600);
 	// 	break;
 	// }
-}
-void LCD::send_lcd(char * array)
-{
-	switch (_lcd_serial_port)
-	{
-		case 0:
-		Serial.print(array);
-		Serial.print("\n");
-		break;
-		case 1:
-		Serial1.print(array);
-		Serial1.print("\n");
-		break;
-		case 2:
-		Serial2.print(array);
-		Serial2.print("\n");
-		break;
-		case 3:
-		Serial3.print(array);
-		Serial3.print("\n");
-		break;
-	}
-}
+	//}
+// void LCD::send_lcd(char * array)
+// {
+// 	switch (_lcd_serial_port)
+// 	{
+// 		case 0:
+// 		Serial.print(array);
+// 		Serial.print("\n");
+// 		break;
+// 		case 1:
+// 		Serial1.print(array);
+// 		Serial1.print("\n");
+// 		break;
+// 		case 2:
+// 		Serial2.print(array);
+// 		Serial2.print("\n");
+// 		break;
+// 		case 3:
+// 		Serial3.print(array);
+// 		Serial3.print("\n");
+// 		break;
+// 	}
+// }
 //new 20220530
 //Lasertrip class
 Lasertrip::Lasertrip(int pin)
