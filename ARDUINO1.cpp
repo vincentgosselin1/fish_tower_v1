@@ -599,7 +599,7 @@ Lasertrip::Lasertrip(int pin)
 {
 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
 	_pin->set_input_pullup();
-	_status = 1;//Off by default.
+	_status = 0;//Active high signal.
 }
 void Lasertrip::listen()
 {
@@ -607,8 +607,8 @@ void Lasertrip::listen()
 	//The following is to avoid the switch bouncing.
 	if(_status != status)
 	{
-		//Wait for switch to debounce.
-		delay(500);
+		//debouncing the transistor, should be a sharp transition.
+		delay(50);
 		//Another reading since oscillation is done.
 		status = _pin->read_input();
 	}
