@@ -62,7 +62,6 @@ void loop()
     Serial.print("Sensing the Camera \n\r");
     //cool down on the camera trigger
     delay(10000);
-    //read back the camera
     Serial.print("Cool down over \n\r");
   }
 }
