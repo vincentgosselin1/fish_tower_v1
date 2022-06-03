@@ -595,28 +595,47 @@ int FAN::get_pinconfig()
 // }
 //new 20220530
 //Lasertrip class
-Lasertrip::Lasertrip(int pin)
-{
+Lasertrip::Lasertrip(int pin){
 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
-	_pin->set_input_pullup();
+	//This worked on 20220531, but it should have been a pull-down.
+	//_pin->set_input_pullup();
+	_pin->set_input();
 	_status = 0;//Active high signal.
 }
-void Lasertrip::listen()
-{
+void Lasertrip::listen(){
 	bool status = _pin->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
 	//The following is to avoid the switch bouncing.
-	if(_status != status)
-	{
+	if(_status != status){
 		//debouncing the transistor, should be a sharp transition.
-		delay(50);
+		delay(1);
 		//Another reading since oscillation is done.
 		status = _pin->read_input();
 	}
 	_status = status;
 }
-bool Lasertrip::get_status()
-{
+bool Lasertrip::get_status(){
 	return _status;
 }
 
-
+// Camdo::Camdo(int pinA, int pinB){
+// 	_pin = new Digital_pin(pinA);//Creating object Digital_pin.
+// 	//This worked on 20220531, but it should have been a pull-down.
+// 	_pin->set_input_pullup();
+// 	_status = 0;//Active high signal.
+// }  
+// void Camdo::listen(){
+// 	bool status = _pin->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
+// 	//The following is to avoid the switch bouncing.
+// 	if(_status != status){
+// 		//debouncing the transistor, should be a sharp transition.
+// 		delay(50);
+// 		//Another reading since oscillation is done.
+// 		status = _pin->read_input();
+// 	}
+// 	_status = status;
+// }
+// bool Camdo::get_status(){
+//   return _status;
+// }
+// void Camdo::fire(){
+// }

@@ -29,7 +29,7 @@ SmartWait smartWait0;
 
 //Components
 Lasertrip Lasertrip1A(13); //pin13 lasertrip pcb1 with channel A.
-//hello
+//Camdo Camdo1(8,9); //Camdo #1, pin 8 trigger , pin 9 feedback.
 
 void setup()
 {
