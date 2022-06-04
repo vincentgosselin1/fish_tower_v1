@@ -29,7 +29,7 @@ SmartWait smartWait0;
 
 //Components
 Lasertrip Lasertrip1A(13); //pin13 lasertrip pcb1 with channel A.
-//Camdo Camdo1(8,9); //Camdo #1, pin 8 trigger , pin 9 feedback.
+Camdo Camdo1(8,9); //Camdo #1, pin 8 trigger , pin 9 feedback.
 
 void setup()
 {
@@ -49,8 +49,6 @@ void loop()
 
   //listen to lasertrip circuits
   Lasertrip1A.listen();
-  Serial.print("not tripped  \n\r");
-
   
   //Did an event happenned?
   if(Lasertrip1A.get_status() == 1){
@@ -58,13 +56,18 @@ void loop()
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
     Serial.print("Activating the Camera \n\r");
+    Camdo1.fire();
     //wait a bit for camera reply
     delay(1000);
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
+    Camdo1.listen();
+    Serial.print("Camdo1 status is ");
+    Serial.println(Camdo1.get_status());
     //cool down on the camera trigger
-    delay(10000);
+    delay(5000);
     Serial.print("Cool down over \n\r");
+    Serial.print("Lasertrip sensing \n\r");
   }
 }
 

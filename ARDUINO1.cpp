@@ -630,10 +630,10 @@ Camdo::Camdo(int pinA, int pinB){
 	_status = 0;//Active high signal.
 }  
 void Camdo::listen(){
-	bool status = _pinB->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
+	int status = _pinB->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
 	_status = status;
 }
-bool Camdo::get_status(){
+int Camdo::get_status(){
   return _status;
 }
 void Camdo::fire(){

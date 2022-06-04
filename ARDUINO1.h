@@ -199,13 +199,13 @@ class Camdo
         public:
 	      Camdo(int pinA, int pinB);
 	      void listen();
-              bool get_status();
+              int get_status();
               void fire();
   
 	private:
   Digital_pin *_pinA;//Digital_pin object.
   Digital_pin *_pinB;//Digital_pin object.
-        bool _status;
+        int _status;
 };
 #endif
 
