@@ -188,27 +188,25 @@ class Lasertrip
 		Lasertrip(int pin);
 		void listen();
 		bool get_status();// 0 -> ON, 1 -> OFF.
-                bool tripped();
-                void reset();
 	private:
-	Digital_pin *_pin;//Digital_pin object.
-	bool _status;
+	        Digital_pin *_pin;//Digital_pin object.
+	        bool _status;
 };
 //Camdo : https://cam-do.com/collections/long-term-time-lapse/products/upblink-time-lapse-and-cloud-controller?utm_term=camdo&utm_campaign=F%26F+-+US+-+Cam+Do+-+Branded&utm_source=adwords&utm_medium=ppc&hsa_acc=9744241626&hsa_cam=1460106876&hsa_grp=60492823161&hsa_ad=294046454322&hsa_src=g&hsa_tgt=kwd-349798435345&hsa_kw=camdo&hsa_mt=e&hsa_net=adwords&hsa_ver=3&gclid=Cj0KCQjwnNyUBhCZARIsAI9AYlE-97nepIy8pct24lbUSLRXQGAZkHHdJFkEXE1tIQOJjIkHgT3ux0AaAnJ2EALw_wcB , it's something like that...
-// class Camdo
-// {
-//         public:
-// 	Camdo(int pinA, int pinB);
-// 	void listen();
-//         bool get_status();
-//         void fire();
-
+class Camdo
+{
+  //pinA is Trigger, pinB is Sensing
+        public:
+	      Camdo(int pinA, int pinB);
+	      void listen();
+              bool get_status();
+              void fire();
   
-// 	private:
-// 	Digital_pin *_pinA;//Digital_pin object.
-// 	Digital_pin *_pinB;//Digital_pin object.
-	
-// };
+	private:
+  Digital_pin *_pinA;//Digital_pin object.
+  Digital_pin *_pinB;//Digital_pin object.
+        bool _status;
+};
 #endif
 
 

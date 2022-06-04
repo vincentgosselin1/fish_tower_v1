@@ -595,6 +595,8 @@ int FAN::get_pinconfig()
 // }
 //new 20220530
 //Lasertrip class
+////////////////////////////////////////////////////////////////
+/////////////////////Lasertrip/////////////////////////////////
 Lasertrip::Lasertrip(int pin){
 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
 	//This worked on 20220531, but it should have been a pull-down.
@@ -616,26 +618,47 @@ void Lasertrip::listen(){
 bool Lasertrip::get_status(){
 	return _status;
 }
+///////////////////////////////////////////////////////////////
+///////////////////////Camdo//////////////////////////////////
+Camdo::Camdo(int pinA, int pinB){
+	_pinA = new Digital_pin(pinA);//Creating object Digital_pin.
+	_pinA->set_output();
+	_pinA->low();
 
-// Camdo::Camdo(int pinA, int pinB){
-// 	_pin = new Digital_pin(pinA);//Creating object Digital_pin.
-// 	//This worked on 20220531, but it should have been a pull-down.
-// 	_pin->set_input_pullup();
-// 	_status = 0;//Active high signal.
-// }  
-// void Camdo::listen(){
-// 	bool status = _pin->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
-// 	//The following is to avoid the switch bouncing.
-// 	if(_status != status){
-// 		//debouncing the transistor, should be a sharp transition.
-// 		delay(50);
-// 		//Another reading since oscillation is done.
-// 		status = _pin->read_input();
-// 	}
-// 	_status = status;
+	_pinB = new Digital_pin(pinB);
+	_pinB->set_input();
+	_status = 0;//Active high signal.
+}  
+void Camdo::listen(){
+	bool status = _pinB->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
+	_status = status;
+}
+bool Camdo::get_status(){
+  return _status;
+}
+void Camdo::fire(){
+  _pinA->high();
+  delay(100);
+  _pinA->low();
+}
+
+
+// BULB::BULB(int pin)
+// {
+// 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
+// 	_pin->set_output();//Pin will be an output.
+// 	_timer_on_for = new timer("00d00h00m00s");//on_for default.
+// 	_status = 0;//BULB is off at start.
+// 	_done = 0;
+// 	_pinconfig = pin;
 // }
-// bool Camdo::get_status(){
-//   return _status;
+// void BULB::on()
+// {
+// 	_pin->low();//BULB IS ON WHEN digital pin is LOW.
+// 	_status=1;//BULB is on.
 // }
-// void Camdo::fire(){
+// void BULB::off()
+// {
+// 	_pin->high();//BULB IS ON WHEN digital pin is LOW.
+// 	_status=0;//LED is off.
 // }
