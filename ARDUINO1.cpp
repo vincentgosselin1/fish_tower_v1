@@ -638,7 +638,7 @@ int Camdo::get_status(){
 }
 void Camdo::fire(){
   _pinA->high();
-  delay(100);
+  delay(1000);
   _pinA->low();
 }
 
