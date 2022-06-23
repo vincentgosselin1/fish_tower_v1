@@ -607,12 +607,12 @@ Lasertrip::Lasertrip(int pin){
 void Lasertrip::listen(){
 	bool status = _pin->read_input();// ON is 0 (Grounded), OFF is 1 (OPEN)
 	//The following is to avoid the switch bouncing.
-	if(_status != status){
-		//debouncing the transistor, should be a sharp transition.
-		delay(1);
-		//Another reading since oscillation is done.
-		status = _pin->read_input();
-	}
+	// if(_status != status){
+	// 	//debouncing the transistor, should be a sharp transition.
+	// 	delay(1);
+	// 	//Another reading since oscillation is done.
+	// 	status = _pin->read_input();
+	// }
 	_status = status;
 }
 bool Lasertrip::get_status(){
