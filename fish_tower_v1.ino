@@ -84,7 +84,7 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20220604");
+	Serial.println("Arduino firmware 20220622");
 	//Init components
 	// Growlight.init();
 	// BULB.init();
