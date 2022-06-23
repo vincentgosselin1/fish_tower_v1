@@ -66,8 +66,10 @@ void loop()
     Camdo1.listen();
     Serial.print("Camdo1 status is ");
     Serial.println(Camdo1.get_status());
+    //stop camera.
+    Camdo1.stop();
     //cool down on the camera trigger
-    delay(5000);
+    delay(1000);
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
