@@ -17,13 +17,8 @@ Version: 1.o
 
 */
 
-//#include "arduino"
-
 #include "ARDUINO1.h"
 #include "arduinotools.h"
-
-//From arduinotools.h
-SmartWait smartWait0;
 
 //ALL CLASSES ARE FROM ARDUINO1
 
@@ -35,14 +30,6 @@ void setup()
 {
   initiate();
 }
-
-
-/*
-The main loop reads the status of the pushButton and writes the value
-to Blink to trigger the camera. It then checks the camera feedback 
-and flashes the onboard Arduino LED
-accordingly.
-*/
 
 void loop()
 {
@@ -75,21 +62,11 @@ void loop()
   }
 }
 
-
-//Every 10 secs.
-//if(smartWait0.wait(10000)) {}
-
 void initiate()
 {
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
 	Serial.println("Arduino firmware 20220622");
-	//Init components
-	// Growlight.init();
-	// BULB.init();
-	// FAN_INTAKE.init();
-	// FAN_OUTTAKE.init();
-	//LCD uses Serial3.
-	//display_welcome();	
+	
 }
