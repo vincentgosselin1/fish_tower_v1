@@ -636,29 +636,10 @@ void Camdo::listen(){
 int Camdo::get_status(){
   return _status;
 }
-void Camdo::fire(){
+void Camdo::run(){
   _pinA->high();
-  delay(1000);
+}
+void Camdo::stop(){
   _pinA->low();
 }
 
-
-// BULB::BULB(int pin)
-// {
-// 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
-// 	_pin->set_output();//Pin will be an output.
-// 	_timer_on_for = new timer("00d00h00m00s");//on_for default.
-// 	_status = 0;//BULB is off at start.
-// 	_done = 0;
-// 	_pinconfig = pin;
-// }
-// void BULB::on()
-// {
-// 	_pin->low();//BULB IS ON WHEN digital pin is LOW.
-// 	_status=1;//BULB is on.
-// }
-// void BULB::off()
-// {
-// 	_pin->high();//BULB IS ON WHEN digital pin is LOW.
-// 	_status=0;//LED is off.
-// }

@@ -56,9 +56,11 @@ void loop()
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
     Serial.print("Activating the Camera \n\r");
-    Camdo1.fire();
+    Camdo1.run();
     //wait a bit for camera reply
-    delay(1000);
+    //Enter your number of minutes
+    int num_of_minutes = 5;//5min. <- Change this Carl.
+    delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
     Camdo1.listen();

@@ -200,7 +200,8 @@ class Camdo
 	      Camdo(int pinA, int pinB);
 	      void listen();
               int get_status();
-              void fire();
+              void run();
+              void stop();
   
 	private:
   Digital_pin *_pinA;//Digital_pin object.
