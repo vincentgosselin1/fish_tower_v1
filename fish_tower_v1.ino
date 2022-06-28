@@ -48,7 +48,7 @@ void loop()
     //Enter your number of minutes
     //int num_of_minutes = 1;//5min. <- Change this Carl.
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
-    delay(5000);
+    delay(50000);
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
     Camdo1.listen();
