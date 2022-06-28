@@ -51,7 +51,7 @@ void loop()
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //delay(50000);
     
-    while(SmartWait1.wait(5000));
+    while(!SmartWait1.wait(5000));
 
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
