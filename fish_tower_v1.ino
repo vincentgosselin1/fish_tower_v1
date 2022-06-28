@@ -54,7 +54,7 @@ void loop()
     while(!SmartWait1.wait(10000)){
       int i = 0;
       i++;
-      Serial.println(i,"count is  %d");
+      Serial.println(i, DEC);
     }
 
     //read back the camera
