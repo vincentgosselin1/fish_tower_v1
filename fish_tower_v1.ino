@@ -51,8 +51,7 @@ void loop()
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //delay(50000);
     
-    while(!SmartWait1.wait(50000)){
-    }
+    while(!SmartWait1.wait(50000)){}
 
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
@@ -62,7 +61,7 @@ void loop()
     //stop camera.
     Camdo1.stop();
     //cool down on the camera trigger
-    delay(1000);
+    //delay(1000);
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
