@@ -25,6 +25,7 @@ Version: 1.o
 //Components
 Lasertrip Lasertrip1A(13); //pin13 lasertrip pcb1 with channel A.
 Camdo Camdo1(8,9); //Camdo #1, pin 8 trigger , pin 9 feedback.
+SmartWait SmartWait1;
 
 void setup()
 {
@@ -48,7 +49,10 @@ void loop()
     //Enter your number of minutes
     //int num_of_minutes = 1;//5min. <- Change this Carl.
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
-    delay(50000);
+    //delay(50000);
+    
+    while(SmartWait1.wait(5000));
+
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
     Camdo1.listen();
