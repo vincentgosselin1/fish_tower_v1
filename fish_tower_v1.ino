@@ -51,7 +51,7 @@ void loop()
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //delay(50000);
     int i = 0;
-    while(!SmartWait1.wait(10000)){
+    while(!SmartWait1.wait(20000)){
       i++;
       Serial.println(i, DEC);
     }
