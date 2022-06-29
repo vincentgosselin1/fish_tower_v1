@@ -41,9 +41,9 @@ void loop()
   //Did an event happenned?
   if(Lasertrip1A.get_status() == 1){
     //a fish was detected!
-    //Serial.print("a fish was detected!, laser tripped!  \n\r");
+    Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
-    //Serial.print("Activating the Camera \n\r");
+    Serial.print("Activating the Camera \n\r");
     Camdo1.run();
     //wait a bit for camera reply
     //Enter your number of minutes
@@ -51,22 +51,22 @@ void loop()
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //delay(50000);
     int i = 0;
-    while(!SmartWait1.wait(20000)){
+    while(!SmartWait1.wait(5000)){
       i++;
-      //Serial.println(i, DEC);
+      Serial.println(i, DEC);
     }
 
     //read back the camera
-    //Serial.print("Sensing the Camera \n\r");
+    Serial.print("Sensing the Camera \n\r");
     Camdo1.listen();
-    //Serial.print("Camdo1 status is ");
-    //Serial.println(Camdo1.get_status());
+    Serial.print("Camdo1 status is ");
+    Serial.println(Camdo1.get_status());
     //stop camera.
     Camdo1.stop();
     //cool down on the camera trigger
     //delay(1000);
-    //Serial.print("Cool down over \n\r");
-    //Serial.print("Lasertrip sensing \n\r");
+    Serial.print("Cool down over \n\r");
+    Serial.print("Lasertrip sensing \n\r");
   }
 }
 
