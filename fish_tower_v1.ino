@@ -56,7 +56,7 @@ void loop()
     //   Serial.println(i, DEC);
     // }
     int i = 0;
-    while(i<500){
+    while(i<1000){
       i++;
       Serial.println(i, DEC);
     }
