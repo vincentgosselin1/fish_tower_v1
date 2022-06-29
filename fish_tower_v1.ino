@@ -4,7 +4,7 @@ fish_tower_v1.ino, Vincent Gosselin 2022.
 
 FishTower project. 
 
-Target hardware : ArduinoMega2560
+Target hardware : Arduino Due
 
 Description:
 
@@ -51,6 +51,8 @@ void loop()
       i++;
       Serial.println(i, DEC);
     }
+
+    //while(!SmartWait1.wait(1000));
     
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
