@@ -600,8 +600,8 @@ int FAN::get_pinconfig()
 Lasertrip::Lasertrip(int pin){
 	_pin = new Digital_pin(pin);//Creating object Digital_pin.
 	//This worked on 20220531, but it should have been a pull-down.
-	//_pin->set_input_pullup();
-	_pin->set_input();
+	_pin->set_input_pullup();
+	//_pin->set_input();
 	_status = 0;//Active high signal.
 }
 void Lasertrip::listen(){
