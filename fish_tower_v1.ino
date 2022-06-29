@@ -50,12 +50,17 @@ void loop()
     //int num_of_minutes = 1;//5min. <- Change this Carl.
     //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
     //delay(50000);
+    
+    // while(!SmartWait1.wait(5000)){
+    //   i++;
+    //   Serial.println(i, DEC);
+    // }
     int i = 0;
-    while(!SmartWait1.wait(5000)){
+    while(i<20000){
       i++;
       Serial.println(i, DEC);
     }
-
+    
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
     Camdo1.listen();
