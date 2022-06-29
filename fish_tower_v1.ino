@@ -45,16 +45,7 @@ void loop()
     //activate the camera
     Serial.print("Activating the Camera \n\r");
     Camdo1.run();
-    //wait a bit for camera reply
-    //Enter your number of minutes
-    //int num_of_minutes = 1;//5min. <- Change this Carl.
-    //delay(num_of_minutes*60*1000);// Xmin * 60sec/min * 1000ms/sec.
-    //delay(50000);
     
-    // while(!SmartWait1.wait(500)){
-    //   i++;
-    //   Serial.println(i, DEC);
-    // }
     int i = 0;
     while(i<1000){
       i++;
@@ -69,7 +60,6 @@ void loop()
     //stop camera.
     Camdo1.stop();
     //cool down on the camera trigger
-    //delay(1000);
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
