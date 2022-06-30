@@ -25,6 +25,7 @@ Version: 1.o
 //Components
 Lasertrip Lasertrip1A(13); //pin13 lasertrip pcb1 with channel A.
 Camdo Camdo1(8,9); //Camdo #1, pin 8 trigger , pin 9 feedback.
+PIR_sensor PIR_sensor1(10);
 SmartWait SmartWait1;
 
 void setup()
@@ -37,6 +38,7 @@ void loop()
 
   //listen to lasertrip circuits
   Lasertrip1A.listen();
+  //PIR_sensor1.listen();
   
   //Did an event happenned?
   if(Lasertrip1A.get_status() == 1){

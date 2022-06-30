@@ -208,6 +208,17 @@ class Camdo
   Digital_pin *_pinB;//Digital_pin object.
         int _status;
 };
+
+class PIR_sensor
+{
+	public:
+		PIR_sensor(int pin);
+		void listen();
+		bool get_status();// 0 -> ON, 1 -> OFF.
+	private:
+	        Digital_pin *_pin;//Digital_pin object.
+	        bool _status;
+};
 #endif
 
 

@@ -643,3 +643,19 @@ void Camdo::stop(){
   _pinA->low();
 }
 
+////////////////////////////////////////////////////////////////
+/////////////////////PIR_sensor/////////////////////////////////
+PIR_sensor::PIR_sensor(int pin){
+	_pin = new Digital_pin(pin);//Creating object Digital_pin.
+	//This worked on 20220531, but it should have been a pull-down.
+	//_pin->set_input_pullup();
+	//_pin->set_input();
+	_status = 0;//Active high signal.
+}
+void PIR_sensor::listen(){
+  bool status = _pin->read_input();//LOW to GND.
+	_status = status;
+}
+bool PIR_sensor::get_status(){
+	return _status;
+}
