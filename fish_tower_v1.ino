@@ -38,10 +38,11 @@ void loop()
 
   //listen to lasertrip circuits
   Lasertrip1A.listen();
-  //PIR_sensor1.listen();
+  PIR_sensor1.listen();
   
   //Did an event happenned?
-  if(Lasertrip1A.get_status() == 1){
+  //if(Lasertrip1A.get_status() == 1){
+  if((Lasertrip1A.get_status() == 1) or PIR_sensor1.get_status() == 1){
     //a fish was detected!
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
@@ -74,6 +75,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20220628");
+	Serial.println("Arduino firmware 20220705_18h41PM");
 	
 }
