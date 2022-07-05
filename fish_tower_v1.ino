@@ -42,7 +42,7 @@ void loop()
   
   //Did an event happenned?
   //if(Lasertrip1A.get_status() == 1){
-  if((Lasertrip1A.get_status() == 1) or PIR_sensor1.get_status() == 1){
+  if((Lasertrip1A.get_status() == 1) or (PIR_sensor1.get_status() == 1)){
     //a fish was detected!
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
