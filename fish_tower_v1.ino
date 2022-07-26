@@ -52,12 +52,12 @@ void loop()
   
   //Did an event happenned?
   //if((Lasertrip1A.get_status() == 1) or (PIR_sensor1.get_status() == 1)){
-  if((   Lasertrip1A.get_status() or Lasertrip1B.get_status() \
+  if(   Lasertrip1A.get_status() or Lasertrip1B.get_status() \
       or Lasertrip2A.get_status() or Lasertrip2B.get_status() \
       or Lasertrip3A.get_status() or Lasertrip3B.get_status() \
       or Lasertrip4A.get_status() or Lasertrip4B.get_status() \
       or Lasertrip5A.get_status() or Lasertrip5B.get_status() \
-      or PIR_sensor1.get_status() )){
+      or PIR_sensor1.get_status() ){
     
     //a fish was detected!
     Serial.print("a fish was detected!, laser tripped!  \n\r");
