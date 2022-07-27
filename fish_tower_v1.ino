@@ -36,9 +36,9 @@ Lasertrip Lasertrip5B(4);
 Camdo Camdo1(35,37); //Camdo #1, pin 35 trigger 3.5mm , pin 37 feedback 2.5mm.
 
 PIR_sensor PIR_sensor1(28);
-PIR_sensor PIR_sensor2(29);
-PIR_sensor PIR_sensor3(30);
-PIR_sensor PIR_sensor4(31);
+//PIR_sensor PIR_sensor2(29);
+//PIR_sensor PIR_sensor3(30);
+//PIR_sensor PIR_sensor4(31);
 
 SmartWait SmartWait1;
 
