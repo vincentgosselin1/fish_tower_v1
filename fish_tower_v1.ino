@@ -69,7 +69,7 @@ void loop()
   // 	 //or PIR_sensor1.get_status()
   // 	 ){
 
-    if(    Lasertrip1A.get_status() ) {
+    if(    Lasertrip1A.get_status() or Lasertrip1B.get_status() ) {
     
     //a fish was detected!
     Serial.print("a fish was detected!, laser tripped!  \n\r");
