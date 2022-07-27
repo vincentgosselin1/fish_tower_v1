@@ -71,7 +71,8 @@ void loop()
 
     if(    Lasertrip1A.get_status() or Lasertrip1B.get_status() 
 	or Lasertrip2A.get_status() or Lasertrip2B.get_status() 
-	or Lasertrip3A.get_status() or Lasertrip3B.get_status() 
+	or Lasertrip3A.get_status() or Lasertrip3B.get_status()
+	or Lasertrip4A.get_status() or Lasertrip4B.get_status()
          ){
     
     //a fish was detected!
