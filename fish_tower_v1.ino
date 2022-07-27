@@ -91,7 +91,7 @@ void loop()
     Camdo1.run();
     
     int i = 0;
-    while(i<1000){
+    while(i<10000){
       i++;
       Serial.println(i, DEC);
     }
