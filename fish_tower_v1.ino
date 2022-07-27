@@ -62,9 +62,9 @@ void loop()
   Lasertrip5A.listen();
   Lasertrip5B.listen();
   PIR_sensor1.listen();
-  PIR_sensor2.listen();
-  PIR_sensor3.listen();
-  PIR_sensor4.listen();
+  //PIR_sensor2.listen();
+  //PIR_sensor3.listen();
+  //PIR_sensor4.listen();
   
   //Did an event happenned?
   //if((Lasertrip1A.get_status() == 1) or (PIR_sensor1.get_status() == 1)){
