@@ -623,7 +623,7 @@ bool Lasertrip::get_status(){
 Camdo::Camdo(int pinA, int pinB){
 	_pinA = new Digital_pin(pinA);//Creating object Digital_pin.
 	_pinA->set_output();
-	_pinA->low();
+	_pinA->high();//active low polarity with converter circuit
 
 	_pinB = new Digital_pin(pinB);
 	_pinB->set_input();
@@ -637,10 +637,10 @@ int Camdo::get_status(){
   return _status;
 }
 void Camdo::run(){
-  _pinA->high();
+  _pinA->low();
 }
 void Camdo::stop(){
-  _pinA->low();
+  _pinA->high();
 }
 
 ////////////////////////////////////////////////////////////////
