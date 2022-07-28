@@ -62,6 +62,7 @@ void loop()
   Lasertrip5A.listen();
   Lasertrip5B.listen();
   PIR_sensor1.listen();
+  Camdo1.stop();
   
   //PIR_sensor2.listen();
   //PIR_sensor3.listen();
