@@ -116,6 +116,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20220726_18h49");
+	Serial.println("Arduino firmware 20220728_16h53");
 	
 }
