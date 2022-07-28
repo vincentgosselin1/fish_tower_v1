@@ -88,7 +88,7 @@ void loop()
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
     Serial.print("Activating the Camera \n\r");
-    Camdo1.run();
+    Camdo1.run();//setting it low
     
     int i = 0;
     while(i<10000){
@@ -104,7 +104,7 @@ void loop()
     Serial.print("Camdo1 status is ");
     Serial.println(Camdo1.get_status());
     //stop camera.
-    Camdo1.stop();
+    Camdo1.stop();//setting it high
     //cool down on the camera trigger
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
