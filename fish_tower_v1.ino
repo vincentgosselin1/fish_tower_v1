@@ -88,7 +88,7 @@ void loop()
 	or Lasertrip4A.get_status() or Lasertrip4B.get_status()
 	or Lasertrip5A.get_status() or Lasertrip5B.get_status()
 	   or PIR_sensor1.get_status() or PIR_sensor2.get_status()
-	   or PIR_sensor3.get_status() or PIR_sensor4.get_status()
+	   or PIR_sensor3.get_status() //or PIR_sensor4.get_status()
          ){
     
     //a fish was detected!
