@@ -73,6 +73,13 @@ void loop()
   PIR_sensor2.listen();
   PIR_sensor3.listen();
   PIR_sensor4.listen();
+
+  int var = 0;
+  var =  PIR_sensor4.get_status();
+  
+  Serial.print("pir4 is ");
+  Serial.println(var, DEC);
+  
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() or Lasertrip1B.get_status() 
