@@ -87,7 +87,7 @@ void loop()
 
   //int tmp;
   tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
-  delay(1);
+  delay(10);
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
