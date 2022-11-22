@@ -48,6 +48,10 @@ PIR_sensor PIR_sensor4(53);
 
 SmartWait SmartWait1;
 
+
+int tmp;
+
+
 void setup()
 {
   initiate();
@@ -81,8 +85,9 @@ void loop()
   // Serial.print("pir4 is ");
   // Serial.println(var, DEC);
 
-  int tmp;
-  tmp = PIR_sensor3.get_status(); // || PIR_sensor4.get_status();
+  //int tmp;
+  tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
+  delay(1);
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
@@ -95,7 +100,7 @@ void loop()
 	   || tmp
          ){
     
-    //a fish was detected!
+    //a fish was detected! 
     Serial.print("a fish was detected!, laser tripped!  \n\r");
     //activate the camera
     Serial.print("Activating the Camera \n\r");
