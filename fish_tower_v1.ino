@@ -82,7 +82,7 @@ void loop()
   // Serial.println(var, DEC);
 
   int tmp;
-  tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
+  tmp = PIR_sensor3.get_status(); // || PIR_sensor4.get_status();
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
