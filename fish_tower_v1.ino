@@ -48,10 +48,6 @@ PIR_sensor PIR_sensor4(53);
 
 SmartWait SmartWait1;
 
-
-int tmp;
-
-
 void setup()
 {
   initiate();
@@ -77,17 +73,6 @@ void loop()
   PIR_sensor2.listen();
   PIR_sensor3.listen();
   PIR_sensor4.listen();
-  //delay(1);
-
-  // int var = 0;
-  // var =  PIR_sensor4.get_status();
-  
-  // Serial.print("pir4 is ");
-  // Serial.println(var, DEC);
-
-  //int tmp;
-  //tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
-  //delay(10);
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
@@ -97,7 +82,6 @@ void loop()
 	   || Lasertrip5A.get_status() || Lasertrip5B.get_status()
 	   || PIR_sensor1.get_status() || PIR_sensor2.get_status()
 	   || PIR_sensor3.get_status() //|| PIR_sensor4.get_status()
-	   //|| tmp
          ){
     
     //a fish was detected! 
@@ -111,8 +95,6 @@ void loop()
       i++;
       Serial.println(i, DEC);
     }
-
-    //while(!SmartWait1.wait(1000));
     
     //read back the camera
     Serial.print("Sensing the Camera \n\r");
@@ -132,6 +114,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20221122-17h56");
-	Serial.println("wtf? || ");
+	Serial.println("Arduino firmware 20221122-18h45");
+	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 ");
 }
