@@ -89,7 +89,7 @@ void loop()
 	   || Lasertrip4A.get_status() || Lasertrip4B.get_status()
 	   || Lasertrip5A.get_status() || Lasertrip5B.get_status()
 	   || PIR_sensor1.get_status() || PIR_sensor2.get_status()
-	   || PIR_sensor3.get_status() || PIR_sensor4.get_status()
+	   || PIR_sensor3.get_status() //PIR_sensor4.get_status()
          ){
     
     //a fish was detected!
@@ -124,6 +124,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20221109_18h14");
-	Serial.println("Is that it? OR gate was issue? ");
+	Serial.println("Arduino firmware 20221122-17h56");
+	Serial.println("wtf? || ");
 }
