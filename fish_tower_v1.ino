@@ -86,8 +86,8 @@ void loop()
   // Serial.println(var, DEC);
 
   //int tmp;
-  tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
-  delay(10);
+  //tmp = PIR_sensor3.get_status() || PIR_sensor4.get_status();
+  //delay(10);
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
@@ -96,8 +96,8 @@ void loop()
 	   || Lasertrip4A.get_status() || Lasertrip4B.get_status()
 	   || Lasertrip5A.get_status() || Lasertrip5B.get_status()
 	   || PIR_sensor1.get_status() || PIR_sensor2.get_status()
-	   //|| PIR_sensor3.get_status() //PIR_sensor4.get_status()
-	   || tmp
+	   || PIR_sensor3.get_status() || PIR_sensor4.get_status()
+	   //|| tmp
          ){
     
     //a fish was detected! 
