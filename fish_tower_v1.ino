@@ -104,7 +104,7 @@ void loop()
     //stop camera.
     Camdo1.stop();//setting it high
     //cool down on the camera trigger
-    delay(30000);//30seconds
+    delay(40000);//40seconds
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
@@ -116,5 +116,5 @@ void initiate()
 	Serial.begin(9600);
 	Serial.println("Connected");
 	Serial.println("Arduino firmware 20230602-12h08");
-	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 with 30sec cool down");
+	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 with 40sec cool down");
 }
