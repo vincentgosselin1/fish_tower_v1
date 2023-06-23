@@ -1,5 +1,5 @@
 /* 
-fish_tower_v1.ino, Vincent Gosselin 2022.
+fish_tower_v1.ino, Vincent Gosselin 2023.
 
 FishTower project. 
 
@@ -36,7 +36,7 @@ Lasertrip Lasertrip3A(9);
 Lasertrip Lasertrip3B(8);
 Lasertrip Lasertrip4A(7);
 Lasertrip Lasertrip4B(6);
-Lasertrip Lasertrip5A(5);
+//Lasertrip Lasertrip5A(5);
 Lasertrip Lasertrip5B(4);
 
 Camdo Camdo1(35,37); //Camdo #1, pin 35 trigger 3.5mm , pin 37 feedback 2.5mm.
@@ -67,7 +67,7 @@ void loop()
   Lasertrip3B.listen();
   Lasertrip4A.listen();
   Lasertrip4B.listen();
-  Lasertrip5A.listen();
+  //Lasertrip5A.listen();
   Lasertrip5B.listen();
   PIR_sensor1.listen();
   PIR_sensor2.listen();
@@ -79,7 +79,7 @@ void loop()
 	   || Lasertrip2A.get_status() || Lasertrip2B.get_status() 
 	   || Lasertrip3A.get_status() || Lasertrip3B.get_status()
 	   || Lasertrip4A.get_status() || Lasertrip4B.get_status()
-	   || Lasertrip5A.get_status() || Lasertrip5B.get_status()
+	   || Lasertrip5B.get_status()
 	   || PIR_sensor1.get_status() || PIR_sensor2.get_status()
 	   || PIR_sensor3.get_status() //|| PIR_sensor4.get_status()
          ){
@@ -104,6 +104,7 @@ void loop()
     //stop camera.
     Camdo1.stop();//setting it high
     //cool down on the camera trigger
+    delay(60000);//60seconds
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
@@ -114,6 +115,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20221122-18h45");
-	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 ");
+	Serial.println("Arduino firmware 20230623-14h36");
+	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 with 60sec cool down, Lasertrip5A deactivated");
 }
