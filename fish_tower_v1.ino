@@ -35,16 +35,15 @@ Lasertrip Lasertrip2B(10);
 Lasertrip Lasertrip3A(9);
 Lasertrip Lasertrip3B(8);
 Lasertrip Lasertrip4A(7);
-Lasertrip Lasertrip4B(6);
+//Lasertrip Lasertrip4B(6);
 //Lasertrip Lasertrip5A(5);
 Lasertrip Lasertrip5B(4);
 
 Camdo Camdo1(35,37); //Camdo #1, pin 35 trigger 3.5mm , pin 37 feedback 2.5mm.
 
-PIR_sensor PIR_sensor1(28);
-PIR_sensor PIR_sensor2(29);
-PIR_sensor PIR_sensor3(30);
-PIR_sensor PIR_sensor4(53);
+//PIR_sensor PIR_sensor1(28);
+//PIR_sensor PIR_sensor2(29);
+//PIR_sensor PIR_sensor3(30);
 
 SmartWait SmartWait1;
 
@@ -66,22 +65,20 @@ void loop()
   Lasertrip3A.listen();
   Lasertrip3B.listen();
   Lasertrip4A.listen();
-  Lasertrip4B.listen();
+  //Lasertrip4B.listen();
   //Lasertrip5A.listen();
   Lasertrip5B.listen();
-  PIR_sensor1.listen();
-  PIR_sensor2.listen();
-  PIR_sensor3.listen();
-  PIR_sensor4.listen();
+  //PIR_sensor1.listen();
+  //PIR_sensor2.listen();
+  //PIR_sensor3.listen();
   
   //Did an event happenned?
     if(    Lasertrip1A.get_status() || Lasertrip1B.get_status() 
 	   || Lasertrip2A.get_status() || Lasertrip2B.get_status() 
 	   || Lasertrip3A.get_status() || Lasertrip3B.get_status()
-	   || Lasertrip4A.get_status() || Lasertrip4B.get_status()
-	   || Lasertrip5B.get_status()
-	   || PIR_sensor1.get_status() || PIR_sensor2.get_status()
-	   || PIR_sensor3.get_status() //|| PIR_sensor4.get_status()
+	   || Lasertrip4A.get_status() || Lasertrip5B.get_status()
+	   //|| PIR_sensor1.get_status() || PIR_sensor2.get_status()
+	   //|| PIR_sensor3.get_status() 
          ){
     
     //a fish was detected! 
@@ -104,7 +101,7 @@ void loop()
     //stop camera.
     Camdo1.stop();//setting it high
     //cool down on the camera trigger
-    delay(60000);//60seconds
+    delay(210000);//3 mins 30 seconds
     Serial.print("Cool down over \n\r");
     Serial.print("Lasertrip sensing \n\r");
   }
@@ -115,6 +112,6 @@ void initiate()
 	//Start Serial communication for debugging.
 	Serial.begin(9600);
 	Serial.println("Connected");
-	Serial.println("Arduino firmware 20230623-14h36");
-	Serial.println("Final firmware, OR gate must be added for Pir3 and 4 with 60sec cool down, Lasertrip5A deactivated");
+	Serial.println("Arduino firmware 20230712-19h59");
+	Serial.println("pir sensors and laser4B/5A de-activated");
 }
