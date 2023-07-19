@@ -1,0 +1,47 @@
+#DIGIKEY_ORDER1
+#CART LINK : https://www.digikey.ca/short/zj1rfh8n
+
+1. Phototransistor : 1080-1019-ND x20
+2.  red laser : 		1528-1391-ND x11
+2.1 resistor 100 : A105980CT-N
+3.  resistors 1k : check	
+4.  resistors 10k : check 
+5.  capacitor 1uF :  check
+6.  capacitor 10uF : check
+7.  buzzer :   check
+7.1 Arduino Mega : (Amazon order)
+
+
+8.  potentiometer 1k : check 
+
+9.  ON/OFF switch : check 
+
+11. 5VDC Brick barrel: check
+
+
+
+10. phenix terminal bloc : (todo)
+
+11. Laptop 12VDC Brick barrel: (not sure)
+
+
+11.1 dc barel jack to wires : (check)
+12. jumper wires male/male (not sure)
+
+13. variable temperature soldering iron (check)
+14. Tin metal : (check)
+
+15. npn transistors : (check)
+15. diodes. (check)
+16. 12V to 9V DC regulator (todo)
+16.1 12V to 5V DC regultator (todo)
+
+17. cable shrink (check)
+18. leds  (check)
+19.  simple solid core wire 22 awg. (check)
+	-> Blue (green instead)
+	-> Black
+	-> Red
+
+20. electrical tape (check)
+
